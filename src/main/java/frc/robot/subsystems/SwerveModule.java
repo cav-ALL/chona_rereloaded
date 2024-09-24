@@ -78,7 +78,7 @@ public class SwerveModule extends SubsystemBase {
 		driveMotor.setIdleMode(CANSparkMax.IdleMode.kBrake);
 
 		// Set PID values
-		driveMotor.getPIDController().setP(0.2);
+		driveMotor.getPIDController().setP(0.5);
 		driveMotor.getPIDController().setI(0.0);
 		driveMotor.getPIDController().setD(0.0);
 
@@ -145,6 +145,7 @@ public class SwerveModule extends SubsystemBase {
 	@Override
 	public void periodic() {
 		SmartDashboard.putNumber(name + "/Speed", getDriveSpeed());
+		SmartDashboard.putNumber(name + "/Target Speed", currentState.speedMetersPerSecond);
 		// SmartDashboard.putNumber(name + "/Position", getDrivePosition());
 		// SmartDashboard.putNumber(name + "/Angle", getTurnAngle());
 		SmartDashboard.putNumber(name + "/Absolute Angle",
