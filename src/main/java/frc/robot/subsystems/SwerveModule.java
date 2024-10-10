@@ -78,9 +78,9 @@ public class SwerveModule extends SubsystemBase {
 		driveMotor.setIdleMode(CANSparkMax.IdleMode.kBrake);
 
 		// Set PID values
-		driveMotor.getPIDController().setP(0.39);
-		driveMotor.getPIDController().setI(0.0015);
-		driveMotor.getPIDController().setD(-0.1);
+		driveMotor.getPIDController().setP(0.4);
+		driveMotor.getPIDController().setI(0.001);
+		driveMotor.getPIDController().setD(0.01);
 
 		// Set encoders to zero
 		resetTurnEncoder();
